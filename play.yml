@@ -2,26 +2,10 @@
   hosts: all
   tasks:
   - name: install package
-    yum:
-     name: httpd
-     state: present 
-  - name: copy website
-    copy:
-     content: "<h1> THIS IS CREATED BY FUJITSU TEAM </h1>"
-     dest: /var/www/html/index.html
-  - name: restart service
-    service:
-     name: httpd
-     state: restarted
-     enabled: true
-  - name: add port in the firewall
-    firewalld:
-     port: 80/tcp
-     state: enabled
-     permanent: yes
-     immediate: true
-  - name: create user
     user:
-     name: gaurav
+     name: rizwan
      state: present
-    
+  - name: create website
+    copy:
+     content: "<h1> THIS IS DONE BY GAURAV"
+     dest: /var/www/html/index.html
