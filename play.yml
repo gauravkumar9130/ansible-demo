@@ -7,7 +7,7 @@
      state: present 
   - name: copy website
     copy:
-     content: "Hello THIS IS DONE BY ANSIBLE"
+     content: "<h1> THIS IS CREATED BY FUJITSU TEAM </h1>"
      dest: /var/www/html/index.html
   - name: restart service
     service:
@@ -20,4 +20,8 @@
      state: enabled
      permanent: yes
      immediate: true
+  - name: create user
+    user:
+     name: gaurav
+     state: present
     
