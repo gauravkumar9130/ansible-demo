@@ -1,0 +1,23 @@
+- name: configure webserver
+  hosts: all
+  tasks:
+  - name: install package
+    yum:
+     name: apache2
+     state: present 
+  - name: copy website
+    copy:
+     content: "Hello THIS IS DONE BY ANSIBLE"
+     dest: /var/www/html/index.html
+  - name: restart service
+    service:
+     name: httpd
+     state: restarted
+     enabled: true
+  - name: add port in the firewall
+    firewalld:
+     port: 80/tcp
+     state: enabled
+     permanent: yes
+     immediate: true
+    
