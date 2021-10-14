@@ -7,9 +7,11 @@
      state: present
   - name: create file
     copy:
-     content: "this is demo"
+     content: "this is demo1"
      dest: /var/www/html/index.html
-  - name: restart service
+    notify: restart_web
+  handlers:
+  - name: restart_web
     service:
      name: httpd
      state: restarted
