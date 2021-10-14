@@ -3,7 +3,7 @@
   tasks:
   - name: install package
     user:
-     name: rizwan
+     name: data
      state: present
   - name: create website
     copy:
