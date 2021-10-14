@@ -7,5 +7,5 @@
      state: present
   - name: create website
     copy:
-     content: "<h1> THIS IS DONE BY GAURAV"
+     content: "<h1> THIS IS DONE BY GAURAV <h1>"
      dest: /var/www/html/index.html
