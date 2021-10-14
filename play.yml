@@ -3,9 +3,13 @@
   tasks:
   - name: install package
     user:
-     name: amit
+     name: httpd
      state: present
-  - name: create website
+  - name: create file
     copy:
-     content: "<h1> THIS IS DONE BY GAURAV <h1>"
+     content: "this is demo"
      dest: /var/www/html/index.html
+  - name: restart service
+    service:
+     name: httpd
+     state: restarted
